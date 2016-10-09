@@ -43,7 +43,8 @@ from enigma import eTimer, eServiceCenter, eDVBServicePMTHandler, iServiceInform
 from time import time, localtime, strftime
 import os
 from bisect import insort
-from sys import maxint
+#from sys import maxint
+maxint = 65535
 
 from RecordTimer import RecordTimerEntry, RecordTimer, findSafeRecordPath
 
