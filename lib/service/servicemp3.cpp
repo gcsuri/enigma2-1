@@ -573,6 +573,14 @@ eServiceMP3::eServiceMP3(eServiceReference ref):
 #endif
 	if ( m_gst_playbin )
 	{
+
+      /* 
+       *test forcing aml-video-sink
+       */
+
+      videoSink = gst_element_factory_make("amlvsink", "GstDVBVideoSink");
+      g_object_set (m_gst_playbin, "video-sink", videoSink, NULL);
+
 		/*
 		 * avoid video conversion, let the dvbmediasink handle that using native video flag
 		 * volume control is done by hardware, do not use soft volume flag
